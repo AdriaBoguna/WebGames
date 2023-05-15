@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="logo.ico" />
+    <!-- REFERENCIA FITXER CSS/JS -->
+    <link rel="stylesheet" href="login.css" />
+    <script defer src="login.js"></script>
+    <script defer src="clases.js"></script>
+    <script defer src="Post.js"></script>
+    <title>Sesion</title>
+  </head>
+  <body>
+    <section id="registro" class="contenedor-formulario">
+      <h1>Crear cuenta</h1>
+      <form>
+        <div class="user-box">
+          <input type="text" name="nombre" required="" />
+          <label>Nombre</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="apellido" required="" />
+          <label>Apellido</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="nick" required="" />
+          <label>Apodo</label>
+        </div>
+        <label>Ciudad
+          <select id="ciudad" name="ciudad">
+            <option value="1">Madrid</option>
+            <option value="2">Andalucía</option>
+            <option value="3">Castilla y León</option>
+            <option value="4">Valéncia</option>
+            <option value="5">Extremadura</option>
+            <option value="6">Melilla</option>
+            <option value="7">Canarias</option>
+            <option value="8">País Vasco</option>
+            <option value="9">Cantabria</option>
+            <option value="10">La Rioja</option>
+            <option value="11">Asturias</option>
+            <option value="12">Aragón</option>
+            <option value="13">Galícia</option>
+            <option value="14">Catalunya</option>
+          </select>
+        </label>
+        <div class="user-box">
+          <input type="email" name="email" required="" />
+          <label>Correo electrónico</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="" />
+          <label>Contraseña</label>
+        </div>
+        <button onclick="RegisterAccount()" type="submit" id="registrarse-btn">Crear cuenta</button>
+        <a href="#" id="ya-tengo-cuenta-btn">Ya tengo una cuenta</a>
+      </form>
+    </section>
+    
+    <section id="login" class="contenedor-formulario" style="display: none;">
+      <form>
+        <h1>Iniciar sesión</h1>
+        <div class="user-box">
+          <input type="email" name="email" required="" />
+          <label>Correo electrónico</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="" />
+          <label>Contraseña</label>
+        </div>
+        <button onclick="LogIn()" type="submit" id="iniciar-sesion-btn">Iniciar sesión</button>
+      </form>
+    </section>
+  </body>
+</html>

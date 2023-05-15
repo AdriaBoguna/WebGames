@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Faster+One&family=Rye&display=swap");
+
+/*
+********************* ESTILOS GENERALES *************
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Arial;
+}
+
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(SRC_Zombies/zombies.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+/*
+********************* MENÚ NAVEGACIÓN *************
+*/
+
+nav {
+  /* background-image: linear-gradient(rgba(0, 132, 255, 0.637), black); */
+  background-color: rgba(0, 0, 0, 0.547);
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgb(0, 0, 0);
+  border-bottom-style: outset;
+  border-color: red;
+  outline-style: outset;
+  outline-color: darkred;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+nav li {
+  margin-right: 30px;
+}
+
+nav li.logo {
+  margin-right: auto;
+}
+
+nav li img {
+  width: 180px;
+  height: 30px;
+}
+
+nav a {
+  font-size: medium;
+  display: block;
+  font-family: 'Bungee Spice', cursive;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  background-color: #e7a7288c;
+  border-radius: 20px;
+}
+
+/*
+********************** BOTON ************************
+*/
+
+button {
+  padding: 0 15px 0 15px;
+  font-size: 17px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2.3px rgba(255, 255, 255, 0.8);
+  position: relative;
+  width: 150px;
+  height: 40px;
+  border-radius: 100% 9% 9% 100% / 0% 100% 100% 0%;
+  border: none;
+  background-image: linear-gradient(
+    180deg,
+    #cdb373,
+    #795e2b,
+    #ad8d53,
+    #fffab7,
+    #795d2f,
+    #614818,
+    #bc9859,
+    #876a35,
+    #736141
+  );
+}
+
+button::before {
+  content: "";
+  height: 44px;
+  width: 10px;
+  position: absolute;
+  top: -4.7%;
+  left: -5.9%;
+  border-radius: 100% 31% 28% 100% / 0% 100% 100% 0%;
+  background-image: linear-gradient(
+    180deg,
+    #cdb373,
+    #795e2b,
+    #ad8d53,
+    #fffab7,
+    #795d2f,
+    #614818,
+    #bc9859,
+    #876a35,
+    #736141
+  );
+}
+
+button:hover {
+  color: white;
+  box-shadow: 0 24px 31px 12px rgba(66, 0, 0, 0.616),
+    0 27px 50px 0 rgba(0, 0, 0, 0.725);
+}
+
+.bullet {
+  height: 38px;
+  width: 60px;
+  position: absolute;
+  top: 3%;
+  left: 95%;
+  border-radius: 10% 100% 100% 10% / 10% 50% 50% 10%;
+  background-image: linear-gradient(
+    180deg,
+    #512614,
+    #a1623a,
+    #ba7447,
+    #edc38b,
+    #b27449,
+    #ddab77,
+    #eac4ae,
+    #b67e4e,
+    #5b2d17,
+    #44271c
+  );
+  z-index: -1;
+}
+
+button:active .bullet {
+  left: 115%;
+  transition: all 0.2s;
+}
+
+/*
+********************** JUEGO ************************
+*/
+
+
+#juego {
+  position: relative;
+  width: 490px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("SRC_Zombies/sueloT.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: 0;
+  margin-bottom: 8px;
+  border: 10px solid rgb(0, 0, 0);
+  outline-style: outset;
+  outline-color: grey;
+}
+
+#startButton {
+  position: absolute;
+  z-index: 100;
+  font-size: 24px;
+  padding: 10px 20px;
+}
+
+#game-stats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  z-index: 1;
+}
+#health{
+  margin-left: 320px;
+}
+
+
+/*
+********************** RANKING ************************
+*/
+
+.leaderboard-container {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: -600px;
+  margin-left: 100px;
+  /* border: 5px solid white; */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: rgb(137,60,21);
+  background: linear-gradient(90deg, rgba(137,60,21,1) 0%, rgba(255,222,68,1) 17%, rgba(177,116,30,1) 24%, rgba(255,231,82,1) 40%, rgba(224,147,38,1) 50%, rgba(228,150,42,1) 59%, rgba(176,120,27,1) 70%, rgba(239,179,51,1) 85%, rgba(135,58,26,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  border-style: outset;
+  box-shadow: 5px 10px 8px #131669d4;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #fff;
+}
+
+th {
+  background-color: #1c1c1c;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #2d2d2d;
+}
+
+tr:nth-child(odd) {
+  background-color: #404040;
+}
+
+tr:first-child {
+  background-color: #7b0000;
+  color: #e0e0e0;
+}
+
+.corona {
+  width: 24px;
+  height: auto;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+
+/*
+********************** INFO JUEGO ************************
+*/
+
+.info-juego {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 20px;
+  border-radius: 8px;
+  width: 22%;
+  height: 50%;
+  box-sizing: border-box;
+  margin-left: -530px;
+  margin-right: 180px;
+  margin-top: 60px;
+}
+
+.descripcion,
+.controles {
+  margin-bottom: 20px;
+}
+
+.descripcion h2,
+.descripcion h3,
+.controles h3 {
+  color: #8a91ef;
+  margin-bottom: 10px;
+}
+
+.descripcion p,
+.controles p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.descripcion img{
+  width: 300px;
+  height: 100px;
+  background-color: rgba(174, 179, 255, 0.264);
+  border-radius: 5px;
+}
+
+.icono-tecnologia {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+kbd {
+  background-color: #faee8d;
+  color: black;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}

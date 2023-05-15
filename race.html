@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png">
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!-- REFERENCIA FITXER CSS/JS-->
+    <link rel="stylesheet" href="race.css">
+    <script defer src="race.js"></script>
+    <title>Carreras</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">
+                <a><img src="SRC_Index2/logo.png" alt="Logo de la página"></a>
+            </li>
+            <li class="font-effect-fire"><a href="">racing_horse</a></li>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="ranking.html">Ranking</a></li> -->
+            <li><a href="cuenta.html">Cuenta</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="contenedor">
+            <div id="overlay" class="overlay">
+                <div id="apuestaContainer" class="apuestas">
+                    <h3>Realizar Apuesta</h3>
+                    <select title="opciones" id="apuesta">
+                        <option value="Caballo-1">Caballo 1</option>
+                        <option value="Caballo-2">Caballo 2</option>
+                        <option value="Caballo-3">Caballo 3</option>
+                        <option value="Caballo-4">Caballo 4</option>
+                    </select>
+                    <button id="apostarBtn">Apostar</button>
+                </div>
+            </div>
+            <article class="info-juego">
+                <div class="descripcion">
+                    <h2>Racing Hourse</h2>
+                    <p>Emocionante juego de apuestas donde tendrás la oportunidad de tentar a la suerte y conseguir la victoria apostando por el caballo ganador. En este juego, no se trata de habilidades, sino de confiar en tu instinto y tener la suerte de tu lado. Recuerda que nadie juega con ventaja en este juego.<br> ¿Estás listo para la emoción de Racing Horse? ¡Apuesta ahora y siente la adrenalina correr por tus venas!</p><br>
+                    <h3>Tecnologías utilizadas:</h3>
+                    <img src="SRC_Space/htmm.png" alt="HTML" class="icono-tecnologia">   
+                </div><br>
+                <div class="controles">
+                    <h3>Controles:</h3>
+                    <p class="loader">Solo apuestas </p><br>
+                </div>
+            </article>
+            <div id="juego" class="racing">
+                <div id="raceTrack">
+                    <h2 id="winner"></h2>
+                    <div class="Caballo" id="Caballo-1"></div>
+                    <div class="Caballo" id="Caballo-2"></div>
+                    <div class="Caballo" id="Caballo-3"></div>
+                    <div class="Caballo" id="Caballo-4"></div>
+                </div>
+                <div id="puntos">Puntos: 0</div>
+                <button id="startBtn">PLAY</button>
+            </div>
+            <article class="leaderboard-container">
+                <h1>Ranking</h1>
+                <table id="leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Localidad</th>
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Los datos se insertarán aquí -->
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

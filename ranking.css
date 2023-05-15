@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Faster+One&family=Rye&display=swap');
+/*
+********************* ESTILOS GENERALES *************
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: Arial;
+    background-image: url(SRC_Ranking/ranking2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+ul{
+    text-justify:auto;
+    font-size:larger;
+    margin-bottom: 10px;
+    color:antiquewhite;
+    margin-left: 50px;
+}
+
+
+/*
+********************* MENÚ NAVEGACIÓN *************
+*/
+nav {
+    background-color: rgba(0, 0, 0, 0.547);
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgb(0, 0, 0);
+    border-bottom-style: outset;
+    border-color: red;
+    outline-style: outset;
+    outline-color: darkred;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+  }
+  
+  nav li {
+    margin-right: 30px;
+  }
+  
+  nav li.logo {
+    margin-right: auto;
+  }
+  
+  nav li img {
+    width: 180px;
+    height: 30px;
+  }
+  
+  nav a {
+    font-size: medium;
+    display: block;
+    font-family: 'Bungee Spice', cursive;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  
+  nav a:hover {
+    background-color: #e7a7288c;
+    border-radius: 20px;
+  }
+
+
+/*
+********************* RANKING *************
+*/
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    background: rgb(137,60,21);
+    background: linear-gradient(90deg, rgba(137,60,21,1) 0%, rgba(255,222,68,1) 17%, rgba(177,116,30,1) 24%, rgba(255,231,82,1) 40%, rgba(224,147,38,1) 50%, rgba(228,150,42,1) 59%, rgba(176,120,27,1) 70%, rgba(239,179,51,1) 85%, rgba(135,58,26,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.leaderboard-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1200px;
+    font-size: 1.1rem;
+    text-align: center;
+    border-style: outset;
+}
+
+table:hover{
+    border: 2px solid #e6a628;
+    box-shadow: 0 12px 16px 0 #ffc045,0 17px 50px 0 #ffd37a;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.leaderboard-table th {
+    background-color: #455a64;
+    font-weight: bold;
+}
+
+.leaderboard-table tr:nth-child(even) {
+    background-color: #37474f;
+}
+
+tr:nth-child(odd) {
+    background-color: #2f3e46;
+}
+
+tr:first-child {
+    background-color: #fbc12de3;
+    color: #212121;
+}
+
+.leaderboard-table tr:hover {
+    background-color: #ddd;
+}
+
+.corona {
+    width: 24px;
+    height: auto;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.total-score {
+    font-weight: bold;
+    color: #333;
+}
+

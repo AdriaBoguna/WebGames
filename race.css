@@ -1,0 +1,490 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Faster+One&family=Rye&display=swap");
+
+/*
+********************* ESTILOS GENERALES *************
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Arial;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(SRC_Reace/carer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+/*
+********************* MENÚ NAVEGACIÓN *************
+*/
+
+nav {
+  /* background-image: linear-gradient(rgba(0, 132, 255, 0.637), black); */
+  background-color: rgba(0, 0, 0, 0.547);
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgb(0, 0, 0);
+  border-bottom-style: outset;
+  border-color: red;
+  outline-style: outset;
+  outline-color: darkred;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+nav li {
+  margin-right: 30px;
+}
+
+nav li.logo {
+  margin-right: auto;
+}
+
+nav li img {
+  width: 180px;
+  height: 30px;
+}
+
+nav a {
+  font-size: medium;
+  display: block;
+  font-family: "Bungee Spice", cursive;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  background-color: #e7a7288c;
+  border-radius: 20px;
+}
+
+/*
+********************** BOTON ************************
+*/
+
+#startBtn {
+  min-width: 100px;
+  min-height: 30px;
+  font-family: "Nunito", sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4fd1c5;
+  background: linear-gradient(
+    90deg,
+    rgba(129, 230, 217, 1) 0%,
+    rgba(79, 209, 197, 1) 100%
+  );
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+
+#startBtn::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: calc(100px + 12px);
+  min-height: calc(30px + 12px);
+  border: 6px solid #00ffcb;
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#startBtn:hover,
+#startBtn:focus {
+  color: #313133;
+}
+
+#startBtn:hover::before,
+#startBtn:focus::before {
+  opacity: 1;
+}
+
+#startBtn::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00ffcb;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.9s infinite;
+}
+
+#startBtn:hover::after,
+#startBtn:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+/*
+********************** MES ************************
+*/
+
+
+
+#juego {
+  position: relative;
+  width: 29%;
+  height: 46%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("SRC_Reace/pista.jpg");
+  background-size: cover;
+  /* animation: moveBackground 400s linear infinite; */
+  background-repeat: repeat-x;
+  margin: 0;
+  margin-top: 50px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  outline-style: outset;
+  outline-color: grey;
+}
+
+/* #juego.racing {
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  100% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: -100% 0;
+  }
+} */
+
+
+/* ... */
+
+#puntos {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  z-index: 100;
+  color: white;
+}
+
+#raceTrack {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.Caballo {
+  position: absolute;
+  left: 0;
+  width: 89px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#Caballo-1 {
+  top: 2px;
+  background-image: url("SRC_Reace/caball1.png");
+}
+
+#Caballo-2 {
+  top: 50px;
+  background-image: url("SRC_Reace/caball2.png");
+}
+
+#Caballo-3 {
+  top: 98px;
+  background-image: url("SRC_Reace/caball3.png");
+}
+#Caballo-4 {
+  top: 146px;
+  background-image: url("SRC_Reace/caball4.png");
+}
+
+#startBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#startBtn.hide {
+  display: none;
+}
+
+#winner {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 350px;
+  background: rgb(137, 60, 21);
+  background: linear-gradient(
+    90deg,
+    rgba(137, 60, 21, 1) 0%,
+    rgba(255, 222, 68, 1) 17%,
+    rgba(177, 116, 30, 1) 24%,
+    rgba(255, 231, 82, 1) 40%,
+    rgba(224, 147, 38, 1) 50%,
+    rgba(228, 150, 42, 1) 59%,
+    rgba(176, 120, 27, 1) 70%,
+    rgba(239, 179, 51, 1) 85%,
+    rgba(135, 58, 26, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.492);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.apuestas {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*
+********************** RANKING ************************
+*/
+
+.leaderboard-container {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: -320px;
+  margin-left: 50px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: rgb(0,128,0);
+  background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(50,205,50,1) 17%, rgba(34,139,34,1) 40%, rgba(107,142,35,1) 70%, rgba(124,252,0,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  border-style: outset;
+  box-shadow: 5px 10px 8px #8d6e63a1;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #fff;
+}
+
+th {
+  background-color: #6d4c41;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #5d4037;
+}
+
+tr:nth-child(odd) {
+  background-color: #4e342e;
+}
+
+tr:first-child {
+  background-color: #d7ccc8;
+  color: #212121;
+}
+.corona {
+  width: 24px;
+  height: auto;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/*
+********************** JUEGO ************************
+*/
+
+.info-juego {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 20px;
+  border-radius: 8px;
+  width: 22%;
+  height: 50%;
+  box-sizing: border-box;
+  margin-left: -300px;
+  margin-right: 180px;
+  margin-top: 60px;
+}
+
+.descripcion,
+.controles {
+  margin-bottom: 20px;
+}
+
+.descripcion h2,
+.descripcion h3,
+.controles h3 {
+  color: #8a91ef;
+  margin-bottom: 10px;
+}
+
+.descripcion p,
+.controles p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.descripcion img {
+  width: 300px;
+  height: 100px;
+  background-color: rgba(174, 179, 255, 0.264);
+  border-radius: 5px;
+}
+
+.icono-tecnologia {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+kbd {
+  background-color: #faee8d;
+  color: black;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+/*
+********************** ANIMACIÓN ************************
+*/
+
+.loader {
+  transform: translateZ(1px);
+}
+
+.loader:after {
+  content: '$';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  background: #FFD700;
+  color: #DAA520;
+  border: 4px double;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .1);
+  animation: coin-flip 9s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes coin-flip {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+
+  100% {
+    transform: rotateY(3600deg);
+  }
+}

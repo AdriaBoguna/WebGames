@@ -1,0 +1,162 @@
+/*
+********************* ESTILOS GENERALES *************
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-image: url(SRC_Index/backk.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+************************* REGISTRO *********************
+*/
+
+.contenedor-formulario {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  margin: 20px auto;
+  transform: translate(-50%, -55%);
+  background-image: url(SRC_Inici/fons.png);
+  background-size: cover;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px 4px rgb(255, 238, 152);
+  border-radius: 10px;
+}
+
+.contenedor-formulario h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: rgb(137, 60, 21);
+  background: linear-gradient(
+    90deg,
+    rgba(137, 60, 21, 1) 0%,
+    rgba(255, 222, 68, 1) 17%,
+    rgba(177, 116, 30, 1) 24%,
+    rgba(255, 231, 82, 1) 40%,
+    rgba(224, 147, 38, 1) 50%,
+    rgba(228, 150, 42, 1) 59%,
+    rgba(176, 120, 27, 1) 70%,
+    rgba(239, 179, 51, 1) 85%,
+    rgba(135, 58, 26, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-box {
+  position: relative;
+}
+
+.user-box input,
+select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+option {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+label {
+  color: #fff;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+/*
+************************* BOTON *********************
+*/
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  text-shadow: -2px 2px 5px #42320bd4;
+  background-image: -webkit-linear-gradient(top, #ffca45d4, #be9032);
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0px 1px #fdc22ed4,
+    0 0 10px 2px #ffca45d4,
+    inset 0 0 0px 1px #f6c039d4,
+    inset 0 0 10px 2px #fbc439d4;
+  transition: 100ms;
+}
+
+
+button:hover {
+  background-image: -webkit-linear-gradient(top, #be9032, #ffca45d4);
+  color: #fff;
+}
+
+#ya-tengo-cuenta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px #fdc22ed4;
+  text-decoration: none;
+}
+
+#ya-tengo-cuenta-btn:hover {
+  color: #fdc22ed4;
+  text-shadow: none;
+}

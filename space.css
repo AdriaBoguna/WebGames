@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Faster+One&family=Rye&display=swap");
+
+/*
+********************* ESTILOS GENERALES *************
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url(SRC_Space/space2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+/*
+********************* MENÚ NAVEGACIÓN *************
+*/
+
+nav {
+  background-color: rgba(0, 0, 0, 0.547);
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgb(0, 0, 0);
+  border-bottom-style: outset;
+  border-color: red;
+  outline-style: outset;
+  outline-color: darkred;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+nav li {
+  margin-right: 30px;
+}
+
+nav li.logo {
+  margin-right: auto;
+}
+
+nav li img {
+  width: 180px;
+  height: 30px;
+}
+
+nav a {
+  font-size: medium;
+  display: block;
+  font-family: "Bungee Spice", cursive;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  background-color: #e7a7288c;
+  border-radius: 20px;
+}
+
+/*
+********************** JUEGO ************************
+*/
+
+.juego {
+  width: 600px;
+  height: 460px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url("SRC_Space/space.png");
+  background-size: cover;
+  background-repeat: repeat-x;
+  margin: 0;
+  margin-top: 50px;
+  border: 10px solid rgb(0, 0, 0);
+  outline-style: outset;
+  outline-color: grey;
+  position: relative;
+}
+
+.grid div {
+  width: 40px;
+  height: 28px;
+}
+
+#puntos {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+.points {
+  font-weight: bold;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+}
+
+.shooter {
+  background-image: url("SRC_Space/nau.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.invader {
+  background-image: url("SRC_Space/alien.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* .invader-1 {
+  background-image: url("SRC_Space/alien2.png");
+  background-size: cover;
+  background-position: center;
+}
+.invader-2 {
+  background-image: url("SRC_Space/alien3.png");
+  background-size: cover;
+  background-position: center;
+}  */
+
+.laser {
+  background-image: url("SRC_Space/laser.png");
+  background-size: 35px 35px;
+  background-position: center;
+}
+
+.boom {
+  background-image: url("SRC_Space/explosio.png");
+  background-size: cover;
+  background-position: center;
+}
+
+
+/*
+********************** BOTON ************************
+*/
+
+.start-button {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: "Avalors Personal Use";
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #ffffff;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.start-button:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+}
+
+.start-button:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.start-button:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/*
+********************** RANKING ************************
+*/
+
+.leaderboard-container {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: -600px;
+  margin-left: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: rgb(137, 60, 21);
+  background: linear-gradient(
+    90deg,
+    rgba(137, 60, 21, 1) 0%,
+    rgba(255, 222, 68, 1) 17%,
+    rgba(177, 116, 30, 1) 24%,
+    rgba(255, 231, 82, 1) 40%,
+    rgba(224, 147, 38, 1) 50%,
+    rgba(228, 150, 42, 1) 59%,
+    rgba(176, 120, 27, 1) 70%,
+    rgba(239, 179, 51, 1) 85%,
+    rgba(135, 58, 26, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  border-style: outset;
+  box-shadow: 5px 10px 8px #131669d4;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #fff;
+}
+
+th {
+  background-color: #283593;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #1e313a;
+}
+
+tr:nth-child(odd) {
+  background-color: #16222a;
+}
+
+tr:first-child {
+  background-color: #7986cb;
+  color: #212121;
+}
+.corona {
+  width: 24px;
+  height: auto;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/*
+********************** INFO JUEGO ************************
+*/
+
+.info-juego {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 20px;
+  border-radius: 8px;
+  width: 22%;
+  height: 50%;
+  box-sizing: border-box;
+  margin-left: -600px;
+  margin-right: 180px;
+  margin-top: 60px;
+}
+
+.descripcion,
+.controles {
+  margin-bottom: 20px;
+}
+
+.descripcion h2,
+.descripcion h3,
+.controles h3 {
+  color: #8a91ef;
+  margin-bottom: 10px;
+}
+
+.descripcion p,
+.controles p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.descripcion img {
+  width: 300px;
+  height: 100px;
+  background-color: rgba(174, 179, 255, 0.264);
+  border-radius: 5px;
+}
+
+.icono-tecnologia {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+kbd {
+  background-color: #faee8d;
+  color: black;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+}

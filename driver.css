@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Faster+One&family=Rye&display=swap");
+/*
+********************* ESTILOS GENERALES *************
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: Arial;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url(SRC_Driver/drive.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+/*
+********************* MENÚ NAVEGACIÓN *************
+*/
+
+nav {
+  background-color: rgba(0, 0, 0, 0.547);
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgb(0, 0, 0);
+  border-bottom-style: outset;
+  border-color: red;
+  outline-style: outset;
+  outline-color: darkred;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+nav li {
+  margin-right: 30px;
+}
+
+nav li.logo {
+  margin-right: auto;
+}
+
+nav li img {
+  width: 180px;
+  height: 30px;
+}
+
+nav a {
+  font-size: medium;
+  display: block;
+  font-family: "Bungee Spice", cursive;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  background-color: #e7a7288c;
+  border-radius: 20px;
+}
+
+/*
+********************** BOTON ************************
+*/
+button {
+  padding: 0.5em 2em 0.5em 2.5em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 15px;
+  color: #fff6fb;
+  letter-spacing: 0.3em;
+  text-shadow: -2px 2px 5px #fd3084;
+  background-color: black;
+  border: 2px solid #feb1de;
+  box-shadow: 0 0 0px 1px #f11271, 0 0 10px 2px #fd3084,
+    inset 0 0 0px 1px #f11271, inset 0 0 10px 2px #fd3084;
+  transition: 100ms;
+}
+
+button:hover {
+  box-shadow: 0 0 0px 1px #f11271, 0 0 10px 2px #fd3084,
+    inset 0 0 0px 1px #f11271, inset 0 0 30px 2px #fd3084;
+  text-shadow: 0 0 10px #fd3084;
+  transform: translateY(-5px);
+}
+
+button:active {
+  box-shadow: 0 0 0px 1px #f11271, 0 0 25px 2px #fd3084,
+    inset 0 0 0px 1px #f11271, inset 0 0 30px 2px #fd3084;
+  transform: translateY(1px);
+}
+
+/*
+********************** JUEGO ************************
+*/
+
+#juego {
+  position: relative;
+  width: 30%;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("SRC_Driver/carretera2.png");
+  background-size: cover;
+  animation: moveBackground 400s linear infinite;
+  background-repeat: repeat-x;
+  margin: 0;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  outline-style: outset;
+  outline-color: grey;
+}
+
+.grid div {
+  width: 40px;
+  height: 28px;
+}
+
+#startButton {
+  position: absolute;
+  z-index: 100;
+  font-size: 24px;
+  padding: 10px 20px;
+}
+
+#puntos {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  z-index: 100;
+}
+
+#camion {
+  width: 100px;
+  height: 100px;
+}
+
+#gameCanvas {
+  position: absolute;
+  z-index: 10;
+  cursor: none;
+}
+
+.circuito {
+  background-size: cover;
+}
+
+@media (max-width: 1200px) {
+  #juego {
+    width: 60%;
+  }
+}
+
+/*
+********************** RANKING ************************
+*/
+
+.leaderboard-container {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: -600px;
+  margin-left: 30px;
+  /* border: 5px solid white; */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: rgb(137, 60, 21);
+  background: linear-gradient(
+    90deg,
+    rgba(137, 60, 21, 1) 0%,
+    rgba(255, 222, 68, 1) 17%,
+    rgba(177, 116, 30, 1) 24%,
+    rgba(255, 231, 82, 1) 40%,
+    rgba(224, 147, 38, 1) 50%,
+    rgba(228, 150, 42, 1) 59%,
+    rgba(176, 120, 27, 1) 70%,
+    rgba(239, 179, 51, 1) 85%,
+    rgba(135, 58, 26, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+  border-style: outset;
+  box-shadow: 5px 10px 8px #131669d4;
+  /* box-shadow: 0 10px 14px 0 #ffc045,0 15px 48px 0 #ffd37a; */
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #fff;
+}
+
+th {
+  background-color: #455a64;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #37474f;
+}
+
+tr:nth-child(odd) {
+  background-color: #2f3e46;
+}
+
+tr:first-child {
+  background-color: #fbc12de3;
+  color: #212121;
+}
+.corona {
+  width: 24px;
+  height: auto;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/*
+********************** INFO JUEGO ************************
+*/
+
+.info-juego {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 20px;
+  border-radius: 8px;
+  width: 25%;
+  height: 50%;
+  box-sizing: border-box;
+  margin-left: -600px;
+  margin-right: 130px;
+  margin-top: 60px;
+}
+
+.descripcion,
+.controles {
+  margin-bottom: 20px;
+}
+
+.descripcion h2,
+.descripcion h3,
+.controles h3 {
+  color: #8a91ef;
+  margin-bottom: 10px;
+}
+
+.descripcion p,
+.controles p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.descripcion img {
+  width: 300px;
+  height: 100px;
+  background-color: rgba(174, 179, 255, 0.264);
+  border-radius: 5px;
+}
+
+/* .tec {
+  background-color: rgba(174, 179, 255, 0.264);
+  border-radius: 5px;
+  display: flex;
+}
+
+.tec p {
+  font-size: larger;
+  color: wheat;
+} */
+
+.icono-tecnologia {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+kbd {
+  background-color: #faee8d;
+  color: black;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+/*
+********************** CONTROLES ************************
+*/
+
+code {
+  font-family: Consolas, monospace;
+  font-size: 1.1rem;
+  background-color: #eeeeeeb1;
+  padding: 3px 6px;
+  border-radius: 3px;
+  color: #333;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+code::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 19px;
+  background-image: url("SRC_dRIVER/mouse.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

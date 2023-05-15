@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png">
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <!-- REFERENCIA FITXER CSS/JS -->
+    <link rel="stylesheet" href="zombies.css">
+    <script defer src="zombies.js"></script>
+    <title>Zombies</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">
+                <a><img src="SRC_Index2/logo.png" alt="Logo de la página"></a>
+            </li>
+            <li class="font-effect-fire"><a href="">Zombie Attack</a></li>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="ranking.html">Ranking</a></li> -->
+            <li><a href="cuenta.html">Cuenta</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="contenedor">
+            <article class="info-juego">
+                <div class="descripcion">
+                    <h2>Zombie Attack</h2>
+                    <p>Tu objetivo es enfrentarte a la mayor cantidad posible de zombies y acabar con ellos, pero debes apresurarte, ya que con el tiempo se volverán más agresivos y rápidos. Es un juego emocionante y lleno de acción, que te mantendrá en el borde de tu asiento. ¡No intentes escapar o el juego acabara con tingo!</p><br>
+                    <h3>Tecnologías utilizadas:</h3>
+                    <img src="SRC_Space/htmm.png" alt="HTML" class="icono-tecnologia">   
+                </div><br>
+                <div class="controles">
+                    <h3>Controles:</h3>
+                    <p>Disparar: <kbd>Space</kbd></p>
+                    <p>Mover: <kbd>←</kbd>  <kbd>↑</kbd>  <kbd>→</kbd>  <kbd>↓</kbd></p>
+                </div>
+            </article>
+            <div id="juego">
+                <div id="game-stats">
+                    <span id="score">Kills: 0</span>
+                    <span id="health">Health: 100</span>
+                  </div>
+                <canvas id="gameCanvas" width="470" height="370"></canvas>
+                <button id="startButton">
+                    <span class="text">START</span>
+                    <span class="bullet"></span>
+                </button>
+            </div>
+            <article class="leaderboard-container">
+                <h1>Ranking</h1>
+                <table id="leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Localidad</th>
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Los datos se insertarán aquí -->
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

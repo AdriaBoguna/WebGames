@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- WEB LOGO -->
+    <link rel="shortcut icon" href="logo.png">
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <!-- ANIMACION CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!-- REFERENCIA FITXER CSS/JS -->
+    <link rel="stylesheet" href="ranking.css">
+    <script defer src="ranking2.js"></script>
+    <!-- TITULO WEB -->
+    <title>Ranking</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- <h1 class="font-effect-neon">Juegatón SL</h1> learn and play -->
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li class="logo">
+                <a><img src="SRC_Index2/logo.png" alt="Logo de la página"></a>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li class="font-effect-fire"><a href="">Ranking</a></li>
+            <li><a href="cuenta.html">Cuenta</a></li>
+        </ul>
+    </nav>
+    <div class="leaderboard-container">
+        <h1>Ranking</h1>
+        <table class="leaderboard-table" id="leaderboard">
+            <thead>
+                <tr>
+                    <th data-sort="posicion" data-direction="asc">Posición</th>
+                    <th data-sort="playerName" data-direction="asc">Nombre</th>
+                    <th data-sort="city" data-direction="asc">Ciudad</th>
+                    <th data-sort="space-invaders" data-direction="asc">Space Invaders</th>
+                    <th data-sort="driver" data-direction="asc">Driver</th>
+                    <th data-sort="racing-horse" data-direction="asc">Racing Horse</th>
+                    <th data-sort="zombies" data-direction="asc">Zombies</th>
+                    <th data-sort="total-score" data-direction="asc">Puntuación Total</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Los datos se insertarán aquí -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

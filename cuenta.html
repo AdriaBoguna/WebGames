@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- WEB LOGO -->
+    <link rel="shortcut icon" href="logo.ico">
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <!-- REFERENCIA FITXER CSS/JS -->
+    <link rel="stylesheet" href="cuenta.css">
+    <script defer src ="cuenta.js"></script>
+    <script defer src="clases.js"></script>
+    <script defer src="Post.js"></script>
+    <!-- TITULO WEB -->
+    <title>Mi cuenta</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">
+                <a><img src="SRC_Index2/logo.png" alt="Logo de la página"></a>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="ranking.html">Ranking</a></li> -->
+            <li class="font-effect-fire"><a href="">Cuenta</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <section class="container">
+            <h1>Información de Usuario</h1>
+            <div class="info">
+                <span class="info-label">Nombre:</span>
+                <span id="name">Juan Pérez</span>
+            </div>
+            <div class="info">
+                <span class="info-label">Localidad:</span>
+                <span id="city">Madrid, España</span>
+            </div>
+            <div class="info">
+                <span class="info-label">Correo electrónico:</span>
+                <span id="email">juan.perez@example.com</span>
+            </div>
+            <table>
+                <tr>
+                    <th><strong>Juego</strong></th>
+                    <th><strong>Puntuación</strong></th>
+                </tr>
+                <tr>
+                    <td>Space Invaders</td>
+                    <td id="space">0</td>
+                </tr>
+                <tr>
+                    <td>Drive</td>
+                    <td id="drive">0</td>
+                </tr>
+                <tr>
+                    <td>Racing Horse</td>
+                    <td id="race">0</td>
+                </tr>
+                <tr>
+                    <td>Zombies</td>
+                    <td id="zombie">0</td>
+                </tr>
+                <tr id="total">
+                    <td><strong>Puntuación Total</strong></td>
+                    <td id="totalPoints"><strong>0</strong></td>
+                </tr>
+            </table>
+            <div class="avatar-container">
+                <img id="avatar" src="SRC_Contacto/avatar1.png" alt="Avatar">
+                <select title="option" id="avatarSelector" onchange="cambiarAvatar()">
+                    <option value="0">Avatar 1</option>
+                    <option value="1">Avatar 2</option>
+                    <option value="2">Avatar 3</option>
+                    <option value="3">Avatar 4</option>
+                    <option value="4">Avatar 5</option>
+                    <option value="5">Avatar 6</option>
+                    <option value="6">Avatar 7</option>
+                    <option value="7">Avatar 8</option>
+                    <option value="8">Avatar 9</option>
+                    <option value="9">Avatar 10</option>
+                </select>
+            </div>
+        </section>
+    </main>   
+</body>
+</html>

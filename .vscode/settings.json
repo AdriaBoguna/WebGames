@@ -1,0 +1,5 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/e66c12d5-78a4-4f42-85aa-fee7b4a1efc1/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/grupo3JuegatonSL",
+    "appService.deploySubpath": ".",
+    "liveServer.settings.port": 5501
+}
